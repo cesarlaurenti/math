@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "2d44ba0d-61b9-4afc-a9d3-fe92816b5030",
+		"name": "Math-application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registrar Usuario",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"user2\",\n    \"password\":\"pass2\",\n    \"roles\": [\"admin\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/math/operation/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"math",
+						"operation",
+						"signup"
+					],
+					"query": [
+						{
+							"key": "grant_tyoe",
+							"value": "client_credentials",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login usuario",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/math/operation/oauth/token?grant_type=password&username=user&password=user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"math",
+						"operation",
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "user"
+						},
+						{
+							"key": "password",
+							"value": "user"
+						},
+						{
+							"key": "grant_tyoe",
+							"value": "client_credentials",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Endpoint para reazalizar login"
+			},
+			"response": []
+		},
+		{
+			"name": "multiplicacion exitosa",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/math/operation/multiply/2.0003/3?access_token=75dc60e6-3f5c-4a7c-838b-7a8ab43f4268",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"math",
+						"operation",
+						"multiply",
+						"2.0003",
+						"3"
+					],
+					"query": [
+						{
+							"key": "grant_tyoe",
+							"value": "client_credentials",
+							"disabled": true
+						},
+						{
+							"key": "access_token",
+							"value": "75dc60e6-3f5c-4a7c-838b-7a8ab43f4268"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "multiplicacion parametro incorrecto",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/math/operation/multiply/2.0003/3?access_token=75dc60e6-3f5c-4a7c-838b-7a8ab43f4268",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"math",
+						"operation",
+						"multiply",
+						"2.0003",
+						"3"
+					],
+					"query": [
+						{
+							"key": "grant_tyoe",
+							"value": "client_credentials",
+							"disabled": true
+						},
+						{
+							"key": "access_token",
+							"value": "75dc60e6-3f5c-4a7c-838b-7a8ab43f4268"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "historial transacciones",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/math/operation/multiply/2.0003/3?access_token=75dc60e6-3f5c-4a7c-838b-7a8ab43f4268",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"math",
+						"operation",
+						"multiply",
+						"2.0003",
+						"3"
+					],
+					"query": [
+						{
+							"key": "grant_tyoe",
+							"value": "client_credentials",
+							"disabled": true
+						},
+						{
+							"key": "access_token",
+							"value": "75dc60e6-3f5c-4a7c-838b-7a8ab43f4268"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/math/operation/multiply/2.0003/3?access_token=8240f3b8-6740-4626-9722-4b9dc986c7cf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"math",
+						"operation",
+						"multiply",
+						"2.0003",
+						"3"
+					],
+					"query": [
+						{
+							"key": "grant_tyoe",
+							"value": "client_credentials",
+							"disabled": true
+						},
+						{
+							"key": "access_token",
+							"value": "8240f3b8-6740-4626-9722-4b9dc986c7cf"
+						}
+					]
+				},
+				"description": "Endpoit para realizar la operación de multiplicación"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "my-trusted-client",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "secret",
+				"type": "string"
+			}
+		]
+	}
+}
