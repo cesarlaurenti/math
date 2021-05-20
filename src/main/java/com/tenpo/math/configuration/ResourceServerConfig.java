@@ -24,6 +24,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/","/home","/register","/login").permitAll()
                 .antMatchers("/multiply/**", "/logout").authenticated()
+                .antMatchers("/audit").access("hasRole('ADMIN')")
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
