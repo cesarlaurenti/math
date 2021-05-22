@@ -54,6 +54,22 @@ Bajar la coleccion de Postman para probar los endpoints:
 
 https://github.com/cesarlaurenti/math/blob/master/postman/Math-application.postman_collection.json
 
+Con postman podras hacer lo siguiente.
+
+Para probar la API, primero que nada es necesario registrar un usuario, para eso no es necesario estar logueado y hay una request a tal fin.
+
+Luego hay que hacer login con un usuario registrado.
+
+El login devuelve un access token, copiarlo.
+
+En el resto de las request se debe pegar el access token en el parámetro access_token y ejecutar la request. El token tiene una validez de 200 segundos.
+
+El endpoint de historial de transacciones solo podrá ser accedido por usuarios con Rol ADMIN, para lo cual tambien hay una request en la colección.
+
+El endpint de multiplicacion tiene dos path params <a> es el operador izquierdo, y <b> es el operador derecho, ambos son de tipo Double:
+
+http://localhost:8080/math/operation/multiply/<a>/<b>?access_token=<access-token>
+
 
 ## Base de datos
 
