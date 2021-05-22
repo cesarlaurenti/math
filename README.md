@@ -68,7 +68,7 @@ El endpoint de historial de transacciones solo podrá ser accedido por usuarios 
 
 El endpint de multiplicacion tiene dos path params <a> es el operador izquierdo, y <b> es el operador derecho, ambos son de tipo Double:
 
-http://localhost:8080/math/operation/multiply/<a>/<b>?access_token=<access-token>
+http://localhost:8080/math/operation/multiply/<a\>/\<b\>?access_token=\<access-token\>
 
 
 ## Base de datos
