@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-//@RequestMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 class MathOperationController {
 
     @Autowired
-    MathOperationService mathOperationService;
+    IMathOperationService mathOperationService;
 
     @GetMapping(path = "/multiply/{a}/{b}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity multiply (@PathVariable("a") double leftOperator, @PathVariable("b") double rightOperator){

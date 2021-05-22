@@ -17,16 +17,4 @@ public class MathApplication {
     public PasswordEncoder getPasswordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
-/*    @Bean
-    public CommandLineRunner setupDefaultUser(CustomUserDetailsService service) {
-        return args -> {
-            service.registerUser(new AppUser(
-                    "user", //username
-                    "user", //password
-                    Arrays.asList(new Role("USER"), new Role("ACTUATOR")),//roles
-                    true//Active
-            ));
-        };
-    }*/
 }

@@ -3,9 +3,10 @@ package com.tenpo.math.operations;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MathOperationService {
+public class MathOperationService implements IMathOperationService{
 
-    Double getMultiplication(Double leftOperator, Double rightOperator) {
+    @Override
+    public Double getMultiplication(Double leftOperator, Double rightOperator) {
         return  leftOperator * rightOperator;
     }
 }

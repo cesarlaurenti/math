@@ -6,10 +6,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-/**
- *The @EnableResourceServer annotation adds a filter of type OAuth2AuthenticationProcessingFilter automatically
- *to the Spring Security filter chain.
- */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
@@ -24,6 +20,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/","/home","/register","/login").permitAll()
                 .antMatchers("/multiply/**", "/logout").authenticated()
+                .antMatchers("/audit").access("hasRole('ADMIN')")
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
