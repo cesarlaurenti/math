@@ -55,4 +55,8 @@ Bajar la coleccion de Postman para probar los endpoints:
 https://github.com/cesarlaurenti/math/blob/master/postman/Math-application.postman_collection.json
 
 
+## Base de datos
 
+La base de datos esta dockerizada y se puede acceder mediante el siguiente comando:
+
+docker exec -it math_postgresqldb_1  psql -U postgres users_db
