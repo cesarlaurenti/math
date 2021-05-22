@@ -1,9 +1,9 @@
-#MATH Rest API
+# MATH Rest API
 
 Math Rest API es una aplicación que permite realizar operaciones matemáticas. En esta primera versión solo está implementada la multiplicación.
 La intención de esta pequeña API es mostrar algunos conceptos básicos de implementación de uns servicio REST.
 
-##Consideraciones:
+## Consideraciones:
 
 -El logout se hace automático a los 200 segundos. No esta implementado un refresh por ahora.
 
@@ -16,7 +16,7 @@ La intención de esta pequeña API es mostrar algunos conceptos básicos de impl
 -El proyecto está organizado por funcionalidades en vez de por capas. Prefiero que a traves de ello puedan verse las funcionalidades en vez de que prime la implementacion interna.
 
 
-##Pre requisitos:
+## Pre requisitos:
 
 1 - Tener instalado docker:
 En Ubuntu Linux: sudo apt install docker.io
@@ -26,7 +26,7 @@ En Ubuntu Linux: sudo apt install docker.io
 3- Tener maven instalado
 
 
-##Instalacion / Ejecucion
+## Instalacion / Ejecucion
 
 -Clonar el proyecto a un workspace local
 
@@ -40,15 +40,15 @@ sudo docker-compose up
 
 En este punto, si todo salio bien, el servicio ya esta levantado.
 
-##Swagger UI
+## Swagger UI
 
 http://localhost:8080/math/operation/swagger-ui/index.html?configUrl=/math/operation/v3/api-docs/swagger-config#/math-operation-controller/multiply
 
-##API Docs
+## API Docs
 
 http://localhost:8080/math/operation/v3/api-docs
 
-##Testeando la API
+## Testeando la API
 
 Bajar la coleccion de Postman para probar los endpoints:
 
