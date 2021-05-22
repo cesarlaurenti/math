@@ -1,8 +1,6 @@
 package com.tenpo.math.user;
 
 import javax.persistence.Entity;
-import javax.persistence.UniqueConstraint;
-
 import com.tenpo.math.base.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

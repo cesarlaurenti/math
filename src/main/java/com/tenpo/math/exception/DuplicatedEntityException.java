@@ -3,8 +3,6 @@ package com.tenpo.math.exception;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.swing.text.html.parser.Entity;
-
 @Getter
 @NoArgsConstructor
 public class DuplicatedEntityException extends RuntimeException{

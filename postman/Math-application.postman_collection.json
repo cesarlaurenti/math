@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Registrar Usuario",
+			"name": "Registrar Usuario admin",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -58,7 +58,116 @@
 			"response": []
 		},
 		{
-			"name": "Login usuario",
+			"name": "Registrar Usuario Comun",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"user\",\n    \"password\":\"pass\",\n    \"roles\": [\"user\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/math/operation/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"math",
+						"operation",
+						"signup"
+					],
+					"query": [
+						{
+							"key": "grant_tyoe",
+							"value": "client_credentials",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login usuario Admin",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/math/operation/oauth/token?grant_type=password&username=user&password=user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"math",
+						"operation",
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "user"
+						},
+						{
+							"key": "password",
+							"value": "user"
+						},
+						{
+							"key": "grant_tyoe",
+							"value": "client_credentials",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Endpoint para reazalizar login"
+			},
+			"response": []
+		},
+		{
+			"name": "Login usuario Comun",
 			"request": {
 				"auth": {
 					"type": "basic",

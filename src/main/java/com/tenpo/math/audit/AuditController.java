@@ -9,10 +9,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class AuditController {
 
-    @Autowired
-    AuditService auditService;
+    IAuditService auditService;
 
-    @RequestMapping(value = "/audit", method = RequestMethod.GET)
+    @Autowired
+    public AuditController(IAuditService auditService){
+        this.auditService = auditService;
+    }
+
+    @GetMapping("/audit")
     @ResponseBody
     @PreAuthorize("hasRole('ADMIN')")
     public Page<Audit> list(Pageable pageable) {

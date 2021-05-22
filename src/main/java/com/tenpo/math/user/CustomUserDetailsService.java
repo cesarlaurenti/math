@@ -10,23 +10,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author developer
- */
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsService implements ICustomUserDetailService {
 
-    @Autowired
     private UserRepository repo;
 
-    @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public CustomUserDetailsService(UserRepository repo, PasswordEncoder encoder){
+        this.repo = repo;
+        this.passwordEncoder = encoder;
+    }
 
     Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 

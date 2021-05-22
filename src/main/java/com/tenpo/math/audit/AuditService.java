@@ -6,11 +6,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuditService {
+public class AuditService implements IAuditService{
 
     @Autowired
     AuditRepository auditRepository;
 
+    @Override
     public Page<Audit> list(Pageable pageable){
         return auditRepository.findAll(pageable);
     }
