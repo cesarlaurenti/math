@@ -38,7 +38,7 @@ public class UserControllerTests {
     @Test
     public void should_return_201_when_every_param_is_present() throws Exception {
         mockMvc.perform(post("/signup")
-                .content(JSONUtils.asJsonString(new SignupUserRequest("user","pass",new ArrayList<Role>(), true)))
+                .content(JSONUtils.asJsonString(new SignupUserRequest("user","pass", new ArrayList<>(), true)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());
     }
@@ -59,7 +59,7 @@ public class UserControllerTests {
     @Test
     public void should_return_400_when_username_param_is_not_present() throws Exception {
         mockMvc.perform(post("/signup")
-                .content(JSONUtils.asJsonString(new SignupUserRequest(null,"pass",new ArrayList<Role>(), true)))
+                .content(JSONUtils.asJsonString(new SignupUserRequest(null,"pass", new ArrayList<>(), true)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest());
     }
@@ -67,7 +67,7 @@ public class UserControllerTests {
     @Test
     public void should_return_400_when_password_param_is_not_present() throws Exception {
         mockMvc.perform(post("/signup")
-                .content(JSONUtils.asJsonString(new SignupUserRequest("user",null, new ArrayList<Role>(), true)))
+                .content(JSONUtils.asJsonString(new SignupUserRequest("user",null, new ArrayList<>(), true)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest());
     }
