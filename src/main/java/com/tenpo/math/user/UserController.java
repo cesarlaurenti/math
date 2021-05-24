@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -19,7 +18,7 @@ public class UserController {
     @Autowired
     public UserController(CustomUserDetailsService userService){
         this.customUserDetailsService = userService;
-    };
+    }
 
     @PostMapping(path = "/signup", consumes = "application/json", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity signUpUser(@Valid @RequestBody SignupUserRequest user){

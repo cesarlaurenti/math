@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class AuditController {
 
-    IAuditService auditService;
+    final IAuditService auditService;
 
     @Autowired
     public AuditController(IAuditService auditService){

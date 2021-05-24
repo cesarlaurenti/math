@@ -17,9 +17,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements ICustomUserDetailService {
 
-    private UserRepository repo;
+    private final UserRepository repo;
 
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     public CustomUserDetailsService(UserRepository repo, PasswordEncoder encoder){
@@ -27,7 +27,7 @@ public class CustomUserDetailsService implements ICustomUserDetailService {
         this.passwordEncoder = encoder;
     }
 
-    Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+    final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
