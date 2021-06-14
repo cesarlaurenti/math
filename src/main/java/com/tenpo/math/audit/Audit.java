@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
+@Builder
 public class Audit extends BaseEntity{
     private LocalDateTime auditTime;
     private String loggedUser;

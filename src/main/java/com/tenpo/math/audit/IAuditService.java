@@ -6,4 +6,5 @@ import org.springframework.data.domain.Pageable;
 public interface IAuditService {
 
     Page<Audit> list(Pageable pageable);
+    public void save(Audit audit);
 }
